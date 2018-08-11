@@ -7,6 +7,7 @@
 //
 
 #import "HJGLauchController.h"
+#import "HJGHomePageController.h"
 
 @interface HJGLauchController ()
 
@@ -16,12 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [SVProgressHUD showWithStatus:@"正在载入..."];
+    
+    
+    [self lauch];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)lauch{
+    
+    
+    // 设置初始导航栏透明度
+    [self wr_setNavBarBackgroundAlpha:0];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [SVProgressHUD dismiss];
+        
+        HJGHomePageController *vc = [[HJGHomePageController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    });
+    
+    
 }
 
 
