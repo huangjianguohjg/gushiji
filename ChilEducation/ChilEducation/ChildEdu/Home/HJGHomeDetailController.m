@@ -24,7 +24,9 @@
 
 @property (nonatomic, strong) UIButton *reNewBut;
 
-@property (strong, nonatomic)YSSpeech *speech;
+@property (strong, nonatomic) YSSpeech *speech;
+
+@property (nonatomic, strong) UIButton *closeBut;
 
 @end
 
@@ -35,6 +37,10 @@
 
     // 设置初始导航栏透明度
     [self wr_setNavBarBackgroundAlpha:0];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[UIView new]];
+    
+    self.navigationItem.title = self.title_str;
     
     [self configBaseData];
     
@@ -47,6 +53,8 @@
     [self startBut];
     
     [self reNewBut];
+    
+    [self closeBut];
     
 }
 
@@ -82,17 +90,17 @@
 {
     if (!_textView) {
         UITextView * theView = [[UITextView alloc] init];
-        theView.text  = @"还得改回访客户较为广泛嘉禾望岗黄建国钢结构好几个价格国际化个感觉钢结构和环境给禁锢于关于个就感觉就换个环境环境规划规划局国际化钴铬合金国际化国际化规划局规划感觉更国际化规划局很干净国际化国际化规划局规划局规划局更换规划局规划局孤鸿寡鹄规划局几个号共和国环境吧黑科技开奖黑科技就会好久好久开奖空间环境就会建行卡扣扣号进口红酒尽快尽快见客户即可将很快黑胡椒康复医院1一样过一个月用个鬼一样否否费用吩咐付付费用富裕抚养费用方法与富有吩咐发附庸风雅方法与副反应复用付费发否否夫妇収";
+        theView.text  = self.gushi;
         theView.textColor = [UIColor blackColor];
         theView.font = [UIFont systemFontOfSize:W(25)];
         theView.backgroundColor = [UIColor clearColor];
         [self.view addSubview:theView];
         [theView setEditable:NO];
         [theView makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.view);
-            make.centerY.equalTo(self.view).offset(H(20));
-            make.width.equalTo(WIDTH - W(55));
-            make.height.equalTo(HEIGHT - H(190));
+            make.top.equalTo(self.view).offset(kMarginTopHeight + H(15));
+            make.left.equalTo(self.view).offset(W(25));
+            make.right.equalTo(self.view).offset(-W(25));
+            make.bottom.equalTo(self.view).offset(-H(100));
         }];
         _textView = theView;
     }
@@ -103,14 +111,14 @@
 {
     if (!_startBut) {
         UIButton * theView = [[UIButton alloc] init];
-        [theView setTitle:@"开始" forState:0];
+        [theView setImage:[UIImage imageNamed:@"start1"] forState:0];
         [theView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [theView addTarget:self action:@selector(startButClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:theView];
         [theView makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.view).offset(W(20));
             make.bottom.equalTo(self.view).offset(-H(20));
-            make.size.equalTo(CGSizeMake(W(70), H(30)));
+            make.size.equalTo(CGSizeMake(W(80), H(80)));
         }];
         _startBut = theView;
     }
@@ -143,15 +151,15 @@
     but.selected = !but.selected;
     
     if (but.selected) {
-        [but setTitle:@"暂停" forState:0];
+        [but setImage:[UIImage imageNamed:@"stop1"] forState:0];
         
         _speech.speakWords = self.textView.text;
         [_speech startSpeaking];
     }else{
         
-        [but setTitle:@"开始" forState:0];
+        [but setImage:[UIImage imageNamed:@"start1"] forState:0];
         
-        [_speech pauseSpeaking];
+        [_speech stopSpeaking];
     }
     
 }
@@ -159,6 +167,49 @@
 - (void)reNewButClick:(UIButton *)but{
     
     
+    
+}
+
+- (UIButton *)closeBut
+{
+    if (!_closeBut) {
+        UIButton * theView = [[UIButton alloc] init];
+        [theView setImage:[UIImage imageNamed:@"close1"] forState:UIControlStateNormal];
+        [theView addTarget:self action:@selector(closeButClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:theView];
+        [theView makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.bottom.equalTo(self.view).offset(-H(15));
+            make.size.equalTo(CGSizeMake(W(80), H(80)));
+        }];
+        _closeBut = theView;
+    }
+    return _closeBut;
+}
+
+- (void)closeButClick{
+    
+    [self.speech stopSpeaking];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+}
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+//    [self.textView scrollsToTop];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.textView scrollsToTop];
+    });
     
 }
 

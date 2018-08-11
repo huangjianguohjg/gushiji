@@ -10,4 +10,8 @@
 
 @interface HJGHomeDetailController : HJGBaseController
 
+@property (nonatomic,strong) NSString *gushi;
+
+@property (nonatomic, strong) NSString *title_str;
+
 @end

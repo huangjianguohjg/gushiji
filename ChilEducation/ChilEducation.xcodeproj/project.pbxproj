@@ -151,6 +151,9 @@
 		D780AFA5211ECFB9003F2E53 /* b3.png in Resources */ = {isa = PBXBuildFile; fileRef = D780AF9F211ECFB9003F2E53 /* b3.png */; };
 		D780AFA6211ECFB9003F2E53 /* b2.png in Resources */ = {isa = PBXBuildFile; fileRef = D780AFA0211ECFB9003F2E53 /* b2.png */; };
 		D780AFAA211ED4BD003F2E53 /* YSSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = D780AFA9211ED4BD003F2E53 /* YSSpeech.m */; };
+		D7A6ED3B211EE329003A4409 /* close1.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A6ED3A211EE329003A4409 /* close1.png */; };
+		D7A6ED3D211EE623003A4409 /* start1.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A6ED3C211EE623003A4409 /* start1.png */; };
+		D7A6ED3F211EE6AA003A4409 /* stop1.png in Resources */ = {isa = PBXBuildFile; fileRef = D7A6ED3E211EE6AA003A4409 /* stop1.png */; };
 		EACB1E7EE2D7FDD8190A1E06 /* libPods-ChilEducation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AC771D30B6E8A46D30F072 /* libPods-ChilEducation.a */; };
 /* End PBXBuildFile section */
 
@@ -429,6 +432,9 @@
 		D780AFA7211ED491003F2E53 /* ChiEducation.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ChiEducation.entitlements; sourceTree = "<group>"; };
 		D780AFA8211ED4BD003F2E53 /* YSSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSSpeech.h; sourceTree = "<group>"; };
 		D780AFA9211ED4BD003F2E53 /* YSSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSSpeech.m; sourceTree = "<group>"; };
+		D7A6ED3A211EE329003A4409 /* close1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close1.png; sourceTree = "<group>"; };
+		D7A6ED3C211EE623003A4409 /* start1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start1.png; sourceTree = "<group>"; };
+		D7A6ED3E211EE6AA003A4409 /* stop1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -917,6 +923,9 @@
 		D780AF6F211EB358003F2E53 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D7A6ED3E211EE6AA003A4409 /* stop1.png */,
+				D7A6ED3C211EE623003A4409 /* start1.png */,
+				D7A6ED3A211EE329003A4409 /* close1.png */,
 				D780AF7B211EBF41003F2E53 /* 11.png */,
 				D780AF78211EBF40003F2E53 /* 22.png */,
 				D780AF83211EBF41003F2E53 /* 33.jpg */,
@@ -1063,6 +1072,7 @@
 				D780AF8C211EBF41003F2E53 /* 88.png in Resources */,
 				D780AFA1211ECFB9003F2E53 /* b1.png in Resources */,
 				D780ADFA211E87A1003F2E53 /* LaunchScreen.storyboard in Resources */,
+				D7A6ED3F211EE6AA003A4409 /* stop1.png in Resources */,
 				D780AF8A211EBF41003F2E53 /* 1616.png in Resources */,
 				D780AF6A211E9BB6003F2E53 /* Ijianjirrr.mp4 in Resources */,
 				D780AF88211EBF41003F2E53 /* 22.png in Resources */,
@@ -1075,6 +1085,7 @@
 				D780AF55211E974E003F2E53 /* image4.jpg in Resources */,
 				D780ADF7211E87A1003F2E53 /* Assets.xcassets in Resources */,
 				D780AF93211EBF41003F2E53 /* 33.jpg in Resources */,
+				D7A6ED3D211EE623003A4409 /* start1.png in Resources */,
 				D780AF8F211EBF41003F2E53 /* 77.jpg in Resources */,
 				D780AF8B211EBF41003F2E53 /* 11.png in Resources */,
 				D780AF51211E974E003F2E53 /* image11.gif in Resources */,
@@ -1082,6 +1093,7 @@
 				D780AF4F211E974E003F2E53 /* image0.jpg in Resources */,
 				D780AF94211EBF41003F2E53 /* 99.png in Resources */,
 				D780AF92211EBF41003F2E53 /* 1212.png in Resources */,
+				D7A6ED3B211EE329003A4409 /* close1.png in Resources */,
 				D780AF03211E8A55003F2E53 /* README.md in Resources */,
 				D780AF02211E8A55003F2E53 /* LICENSE in Resources */,
 				D780ADF5211E87A1003F2E53 /* Main.storyboard in Resources */,
