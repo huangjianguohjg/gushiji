@@ -56,8 +56,13 @@
         // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
-    
-    [JPUSHService setupWithOption:launchOptions appKey:@"9623f051d7a766ad13aa1fa9" channel:nil apsForProduction:NO];
+    NSString *pushKey= @"";
+    if ([HJGSaveTool objectForKey:@"jpushKey"]) {
+        pushKey= [HJGSaveTool objectForKey:@"jpushKey"];
+    }else{
+        pushKey = @"9623f051d7a766ad13aa1fa9";
+    }
+    [JPUSHService setupWithOption:launchOptions appKey:pushKey channel:nil apsForProduction:NO];
     
 }
 
@@ -141,6 +146,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
     // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
     [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:YES];
+    
+    [WRNavigationBar wr_setDefaultNavBarTitleColor:[UIColor redColor]];
+    
 }
 
 

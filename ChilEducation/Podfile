@@ -20,5 +20,6 @@ pod 'MBProgressHUD'
 pod 'AvoidCrash'#, '~> 2.3.0-beta'    #防止闪退
 pod 'WRNavigationBar'
 pod 'HXPhotoPicker', '~> 2.2.0'
+pod 'AXWebViewController'
 pod 'JPush'
 end

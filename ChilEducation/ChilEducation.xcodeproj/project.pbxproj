@@ -178,6 +178,7 @@
 		03AC771D30B6E8A46D30F072 /* libPods-ChilEducation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChilEducation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		083DFFA5688B5883AD33989B /* Pods-ChilEducation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilEducation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChilEducation/Pods-ChilEducation.debug.xcconfig"; sourceTree = "<group>"; };
 		C40E9F0831B3583E85AD3983 /* Pods-ChilEducation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChilEducation.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChilEducation/Pods-ChilEducation.release.xcconfig"; sourceTree = "<group>"; };
+		D7744A3E21213B0E0083EFE1 /* ChilEducation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChilEducation.entitlements; sourceTree = "<group>"; };
 		D780ADEA211E87A1003F2E53 /* ChilEducation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChilEducation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D780ADED211E87A1003F2E53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D780ADEE211E87A1003F2E53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -505,6 +506,7 @@
 		D780ADEC211E87A1003F2E53 /* ChilEducation */ = {
 			isa = PBXGroup;
 			children = (
+				D7744A3E21213B0E0083EFE1 /* ChilEducation.entitlements */,
 				D780AFA7211ED491003F2E53 /* ChiEducation.entitlements */,
 				D780AE1F211E8A54003F2E53 /* ChildEdu */,
 				D780ADED211E87A1003F2E53 /* AppDelegate.h */,
@@ -1024,6 +1026,14 @@
 					D780ADE9211E87A1003F2E53 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					D780AE01211E87A1003F2E53 = {
 						CreatedOnToolsVersion = 9.2;
@@ -1165,6 +1175,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ChilEducation/Pods-ChilEducation-resources.sh",
+				"${PODS_ROOT}/AXIndicatorView/AXIndicatorView/Classes/AXIndicatorView.bundle",
+				"${PODS_ROOT}/AXPracticalHUD/AXPracticalHUD/AXPracticalHUD/AXPracticalHUD.bundle",
+				"${PODS_ROOT}/AXWebViewController/AXWebViewController/AXWebViewController/AXWebViewController.bundle",
 				"${PODS_ROOT}/HXPhotoPicker/照片选择器/HXPhotoPicker/HXPhotoPicker.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
@@ -1452,6 +1465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = ChilEducation/ChilEducation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3K9F87DL75;
 				GCC_PREFIX_HEADER = /Users/dev/gushiji/ChilEducation/ChilEducation/ChildEdu/Tools/PrefixHeader.pch;
@@ -1470,6 +1484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = ChilEducation/ChilEducation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3K9F87DL75;
 				GCC_PREFIX_HEADER = /Users/dev/gushiji/ChilEducation/ChilEducation/ChildEdu/Tools/PrefixHeader.pch;

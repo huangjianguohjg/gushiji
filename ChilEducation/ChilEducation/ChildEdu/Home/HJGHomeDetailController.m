@@ -51,10 +51,12 @@
     [self textView];
     
     [self startBut];
-    
-    [self reNewBut];
-    
+ 
     [self closeBut];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self performSelector:@selector(startButClick:) withObject:self.startBut];
+    });
     
 }
 
@@ -204,9 +206,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    
 //    [self.textView scrollsToTop];
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.textView scrollsToTop];
     });
